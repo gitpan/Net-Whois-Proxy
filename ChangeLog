@@ -1,0 +1,5 @@
+1.3	- Initial CPAN release as Net::Whois::Proxy
+0.13	- Fixed IPv6 lookup system, Fixed IPv4 lookup system
+0.12	- Added LANIC IPv4 lookup support
+0.11	- Bug fixes release
+0.01	- Initial release

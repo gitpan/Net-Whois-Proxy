@@ -1,0 +1,5 @@
+ChangeLog               Change log 
+MANIFEST                This file
+Makefile.PL             Makefile maker
+lib/Net/Whois/Proxy.pm	The Whois proxy library
+META.yml                                 Module meta-data (added by MakeMaker)
