@@ -4,7 +4,7 @@ use strict;
 use IO::Socket;
 use vars qw ($VERSION);
 
-$VERSION = $1 if('$Id: Proxy.pm,v 1.3 2004/07/04 00:13:18 cfaber Exp $' =~ /,v ([\d.]+) /);
+$VERSION = $1 if('$Id: Proxy.pm,v 1.5 2004/07/04 08:24:32 cfaber Exp $' =~ /,v ([\d.]+) /);
 
 =head1 NAME
 
@@ -497,7 +497,7 @@ Preform a recursive whois lookup on a fully qualified domain name (FQDN), Option
 
 =cut
 
-sub domain_whois {
+sub whois_domain {
  my ($self, $domain, $server, $port, $timeout) = @_;
  my $nic;
 
@@ -534,7 +534,8 @@ Attempt to determin if an IPv4 address is syntaxually valid.
 
 sub check_ipv4 {
  my ($self, @ip) = (shift, split(/\./, shift, 4));
- if(!$ip[0] || $ip[0] > 255 || $ip[0] !~ /^\d+$/){
+
+ if(!$ip[0] || $ip[-1] !~ /\d/ || $ip[0] > 255 || $ip[0] !~ /^\d+$/){
 	return $self->_seterrstr("Invalid IPv4 address");
  } else {
 	for my $i (1 .. 3){
@@ -654,7 +655,7 @@ __END__
 
 Colin Faber <cfaber@fpsn.net> http://www.fpsn.net
 
-=head1 COPYRIGHT
+=head1 LICENSE
 
 (C) Colin Faber All rights reserved.  This license may be used under the terms of Perl it self.
 
