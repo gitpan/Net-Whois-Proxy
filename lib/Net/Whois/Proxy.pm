@@ -4,7 +4,7 @@ use strict;
 use IO::Socket;
 use vars qw ($VERSION);
 
-$VERSION = $1 if('$Id: Proxy.pm,v 1.5 2004/07/04 08:24:32 cfaber Exp $' =~ /,v ([\d.]+) /);
+$VERSION = $1 if('$Id: Proxy.pm,v 1.7 2005/04/07 23:20:43 cfaber Exp $' =~ /,v ([\d.]+) /);
 
 =head1 NAME
 
@@ -585,9 +585,17 @@ sub whois_raw {
 sub _query_whois {
  my ($self, $data, $serv, $port, $timeout) = @_;
  my $sock;
+
+ $self->{master_timeout} ||= 10;
+
+ $port ||= $self->{master_port};
+ $serv ||= $self->{master_serv};
+ $timeout ||= $self->{master_timeout};
+
  $self->_pd("Attempting to connect to: $serv:$port (to: $timeout)", caller);
+
  eval {
-	$SIG{ARLM} = sub { die 'timeout'; };
+	$SIG{ALRM} = sub { die 'timeout'; };
 	alarm(($timeout || $self->{master_timeout}) + 5);
 	$sock = IO::Socket::INET->new(
 		Proto		=> 'tcp',

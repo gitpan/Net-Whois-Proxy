@@ -14,3 +14,9 @@ WriteMakefile(
     
 );
 
+sub MY::test {
+  package MY;
+  my $make = shift->SUPER::test();
+  $make =~ s/(PERL_DL_NONLAZY)=1/$1=0/g;
+  return $make;
+}
