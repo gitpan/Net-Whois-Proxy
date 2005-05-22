@@ -1,3 +1,10 @@
+1.8   05/21/2005
+      - Changed ChangeLog format
+      - Added whois.pl example whois client
+      - Updated module documentation
+
+
+
 1.7	- Added some basic tests, Fixed some warnings in whois()
 1.6	- Fixed typo (thanks Ilya Semenov) ARLM should be ALRM
 1.5	- Fixed whois_domain() domain_whois() bug

@@ -4,7 +4,7 @@ use strict;
 use IO::Socket;
 use vars qw ($VERSION);
 
-$VERSION = $1 if('$Id: Proxy.pm,v 1.7 2005/04/07 23:20:43 cfaber Exp $' =~ /,v ([\d.]+) /);
+$VERSION = $1 if('$Id: Proxy.pm,v 1.8 2005/05/22 01:58:08 cfaber Exp $' =~ /,v ([\d.]+) /);
 
 =head1 NAME
 
@@ -16,7 +16,17 @@ The Net::Whois::Proxy library is an easy to use recursive whois client library t
 
 =head1 SYNOPSIS
 
-See the whois.pl example script provided with the library.
+ use Net::Whois::Proxy;
+ my $whois = new Net::Whois::Proxy;
+
+ my $record = $whois->whois('EXAMPLE.COM');
+
+ print $record;
+
+ exit;
+
+
+Also see the whois.pl example script provided with the library distrobution
 
 =head1 METHODS
 
