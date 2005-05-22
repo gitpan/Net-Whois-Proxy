@@ -1,3 +1,6 @@
+1.9   05/21/2005
+      - Added ReferralServer test on IPv4 queries
+
 1.8   05/21/2005
       - Changed ChangeLog format
       - Added whois.pl example whois client

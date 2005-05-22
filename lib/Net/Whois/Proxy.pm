@@ -4,7 +4,7 @@ use strict;
 use IO::Socket;
 use vars qw ($VERSION);
 
-$VERSION = $1 if('$Id: Proxy.pm,v 1.8 2005/05/22 01:58:08 cfaber Exp $' =~ /,v ([\d.]+) /);
+$VERSION = $1 if('$Id: Proxy.pm,v 1.9 2005/05/22 02:40:36 cfaber Exp $' =~ /,v ([\d.]+) /);
 
 =head1 NAME
 
@@ -203,7 +203,6 @@ If the string provided starts with 'convert' and a dotted quad IPv4 address or l
 
 sub whois {
  my ($self, $in) = @_;
-
  if((my $ip = $self->convert_ipv4($in))){     
         return $self->whois_ipv4($ip);      
  } elsif($in =~ /^[a-f0-9][a-f0-9][a-f0-9][a-f0-9]:/){
@@ -334,17 +333,33 @@ sub whois_ipv4 {
  );
 
  # If we're not querying ARIN right off the bat then add it to our hints list.
-
  $server || ($server = $self->{master_ip_whois});
 
- if($server !~ /whois.arin.net/i){
+ if($server !~ /whois\.arin\.net/i){
 	 $hints{'whois.arin.net'}->{port} = 43;
 	 $hints{'whois.arin.net'}->{regexps} = ['/IANA-NETBLOCK/'];
  }
  
  
- my $data = $self->_query_whois($ip, $server, $port || $self->{master_ip_port}, $self->{master_timeout}) || return undef;
+ my $data = $self->_query_whois($ip, $server, $port || $self->{master_ip_port}, $self->{master_timeout}) || return;
 
+ # See if ``ReferralServer'' exists in the CDIR
+ if($data =~ /ReferralServer\:\s*(?:whois:\/\/)?([A-Za-z0-9:.-]+)/){
+	my ($wi, $po) = split(/:/, $1, 2);
+	$po ||= ($self->{master_whois_port} || 4321);
+
+	$self->_pd("ReferralServer Match: $wi:$po", caller);
+	my $data2 = $self->_query_whois($ip, $wi, $po, $self->{master_timeout}) || return;
+
+	if($self->{stacked_results}){
+		$self->_pd("Stacking results", caller);
+		return (!$self->{clean_stack} ? 'QUERY_0: ' . $server : undef) . "\n" . $data . "\n" . (!$self->{clean_stack} ? 'QUERY_1: ' . "$wi\:$po" : "") . "\n" . $data2;
+	} else {
+		return ($data2 ? $data2 : $data);
+	}
+ }
+
+	
  WHOIS: for my $whoisd (keys %hints){
 	$self->_pd($whoisd, caller);
 	HINT: for my $re (@{$hints{$whoisd}->{regexps}}){
