@@ -4,7 +4,7 @@ use strict;
 use IO::Socket;
 use vars qw ($VERSION);
 
-$VERSION = $1 if('$Id: Proxy.pm,v 1.9 2005/05/22 02:40:36 cfaber Exp $' =~ /,v ([\d.]+) /);
+$VERSION = $1 if('$Id: Proxy.pm,v 1.10 2006/06/26 17:19:18 cfaber Exp $' =~ /,v ([\d.]+) /);
 
 =head1 NAME
 
@@ -148,14 +148,14 @@ sub new {
  my ($class, %opts) = @_;
 
  my $self = bless {
-	debug		=> $opts{debug},
-	stacked_results	=> $opts{stacked_results},
-	clean_stack	=> $opts{clean_stack},
-	master_ip_whois	=> $opts{master_ip_whois} || 'whois.arin.net',
-	master_ip_port	=> $opts{master_ip_port} || 43,
-	master_whois	=> $opts{master_whois} || 'rs.internic.net',
-	master_port	=> $opts{master_port} || 43,
-	query_timeout	=> $opts{query_timeout} || 10
+	debug			=> $opts{debug},
+	stacked_results		=> $opts{stacked_results},
+	clean_stack		=> $opts{clean_stack},
+	master_ip_whois		=> $opts{master_ip_whois} || 'whois.arin.net',
+	master_ip_port		=> $opts{master_ip_port} || 43,
+	master_whois		=> $opts{master_whois} || 'rs.internic.net',
+	master_port		=> $opts{master_port} || 43,
+	query_timeout		=> $opts{query_timeout} || 10
  }, $class;
 
  $self->{master_domain_whois} = ($opts{master_domain_whois} || $self->{master_whois});
@@ -178,7 +178,7 @@ If the string provided is an IPv6 address preform an whois query on it.
 
  Example:
 
- print $whois->whois("3ffe:b80:138c:1::59");
+ print $whois->whois("2001:4830:100:20::6");
 
 If the string provided is an IPv4 address preform an whois query on it.
 
@@ -346,7 +346,9 @@ sub whois_ipv4 {
  # See if ``ReferralServer'' exists in the CDIR
  if($data =~ /ReferralServer\:\s*(?:whois:\/\/)?([A-Za-z0-9:.-]+)/){
 	my ($wi, $po) = split(/:/, $1, 2);
-	$po ||= ($self->{master_whois_port} || 4321);
+	if($po !~ /^\d+$/ || !$po){
+		$po = ($self->{master_port} ? $self->{master_port} : 43);
+	}
 
 	$self->_pd("ReferralServer Match: $wi:$po", caller);
 	my $data2 = $self->_query_whois($ip, $wi, $po, $self->{master_timeout}) || return;

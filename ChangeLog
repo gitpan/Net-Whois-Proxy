@@ -1,3 +1,7 @@
+1.10  06/26/2006
+      - Fixed minor bug identified by Erik Oeser within the master_port option
+      - Updated documentation to no longer use 6bone IPv6 address as example
+
 1.9   05/21/2005
       - Added ReferralServer test on IPv4 queries
 
