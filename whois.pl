@@ -3,7 +3,7 @@
 # AUTHOR : Colin Faber <cfaber at fpsn.net>
 #
 # 
-# Copyright (C) 1998/2005 FPSN.NET Development, Inc. all
+# Copyright (C) 1998/2011 FPSN.NET Development, Inc. all
 # rights reserved.
 #
 # This file may be used and modified under the terms of
@@ -27,7 +27,7 @@ use vars qw($self $version);
 
 $self  = (split(/[\\\/]+/, $0))[-1];
 
-$version = '$Id: whois.pl,v 1.4 2005/05/22 01:55:14 cfaber Exp $';
+$version = '$Id: whois.pl,v 1.11 2011/02/07 15:28:43 cfaber Exp $';
 
 if(!@ARGV){
 	print " whois.pl version $version by Colin Faber <cfaber\@fpsn.net>\r\n\tUsage: $self <what ever>\r\n\r\n";

@@ -1,127 +1,128 @@
-                       fpsn.net, Inc.
-             General Open Source License (GOSL)
-                   Code License Agreement
-                        Rev. 1.1
+			The "Artistic License"
 
-READ THE TERMS OF THIS AGREEMENT AND ANY PROVIDED SUPPLEMENTAL 
-LICENSE TERMS (COLLECTIVELY "AGREEMENT") CAREFULLY BEFORE 
-OPENING THE SOFTWARE MEDIA PACKAGE.  BY OPENING THE SOFTWARE 
-MEDIA PACKAGE, YOU AGREE TO THE TERMS OF THIS AGREEMENT.  IF 
-YOU ARE ACCESSING THE SOFTWARE ELECTRONICALLY, INDICATE YOUR 
-ACCEPTANCE OF THESE TERMS BY SELECTING THE "ACCEPT" BUTTON AT 
-THE END OF THIS AGREEMENT.  IF YOU DO NOT AGREE TO ALL THESE 
-TERMS, PROMPTLY RETURN THE UNUSED SOFTWARE TO YOUR PLACE OF 
-PURCHASE FOR A REFUND OR, IF THE SOFTWARE IS ACCESSED 
-ELECTRONICALLY, SELECT THE "DECLINE" BUTTON AT THE END OF THIS
-AGREEMENT.
+				Preamble
 
-1.  LICENSE TO USE.  fpsn.net grants you a non-exclusive license 
-to this "Software". This "Software" is free software; you can 
-redistribute it and/or modify it under the terms of this license
-agreement. This "Software" is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  
+The intent of this document is to state the conditions under which a
+Package may be copied, such that the Copyright Holder maintains some
+semblance of artistic control over the development of the package,
+while giving the users of the package the right to use and distribute
+the Package in a more-or-less customary fashion, plus the right to make
+reasonable modifications.
 
-2.  RESTRICTIONS Software is simi-confidential and fully copyrighted. Title to
-Software and all associated intellectual property rights is retained
-by fpsn.net and/or its license holders.  Except as specifically authorized in any
-Supplemental License Terms, you may make copies of Software. Unless
-enforcement is prohibited by applicable law, you may not modify,
-decompile, reverse engineer Software. You may not publish or
-provide the results of any benchmark or comparison tests run on
-Software to any third party without the prior written consent of fpsn.net.
-No right, title or interest in or to any trademark, service mark, logo
-or trade name of fpsn.net, or its licensors is granted under this Agreement.
+Definitions:
 
-3. DISCLAIMER OF WARRANTY.  FPSN.NET HEREBY STATSE THAT THE "Software" PROVIDED
-SHALL BE DONE SO WITH OUT WARRANTY. BECAUSE THE "Software" IS LICENSED
-FREE OF CHARGE, THERE IS NO WARRANTY FOR THE "Software", TO THE EXTENT
-PERMITTED BY APPLICABLE LAW.  EXCEPT WHEN OTHERWISE STATED IN WRITING 
-BY FPSN.NET. AS STATED THIS "Software" IS PROVIDED "AS IS" WITHOUT
-WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT 
-LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR 
-A PARTICULAR PURPOSE.  THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE 
-OF THE "Software" IS WITH YOU.  SHOULD THE "Software" PROVE DEFECTIVE, 
-YOU ASSUME THE COST OF ALL NECESSARY SERVICING, REPAIR OR CORRECTION.
-IN NO EVENT UNLESS REQUIRED BY APPLICABLE LAW OR AGREED TO IN
-WRITING WILL FPSN.NET, OR ANY OTHER PARTY WHO MAY MODIFY AND/OR REDISTRIBUTE
-THE "Software" AS PERMITTED ABOVE, BE LIABLE TO YOU FOR DAMAGES, INCLUDING
-ANY GENERAL, SPECIAL, INCIDENTAL OR CONSEQUENTIAL DAMAGES ARISING OUT OF 
-THE USE OR INABILITY TO USE THE "Software" (INCLUDING BUT NOT LIMITED TO 
-LOSS OF DATA OR DATA BEING RENDERED INACCURATE OR LOSSES SUSTAINED BY
-YOU OR THIRD PARTIES OR A FAILURE OF THE "Software" TO OPERATE WITH ANY
-OTHER SOFTWARE), EVEN IF SUCH FPSN.NET OR OTHER PARTY HAS ADVISED AGAINST
-THE POSSIBILITY OF SUCH DAMAGES.
+	"Package" refers to the collection of files distributed by the
+	Copyright Holder, and derivatives of that collection of files
+	created through textual modification.
 
-4.  Export Regulations.  All Software and technical data delivered
-under this Agreement are subject to US export control laws and may be
-subject to export or import regulations in other countries.  You agree
-to comply strictly with all such laws and regulations and acknowledge
-that you have the responsibility to obtain such licenses to export,
-re-export, or import as may be required after delivery to you.
+	"Standard Version" refers to such a Package if it has not been
+	modified, or has been modified in accordance with the wishes
+	of the Copyright Holder as specified below.
 
-5.  U.S. Government Restricted Rights.  Use, duplication, or
-disclosure by the U.S. Government is subject to restrictions set forth
-in this Agreement and as provided in DFARS 227.7202-1 (a) and
-227.7202-3(a) (1995), DFARS 252.227-7013 (c)(1)(ii)(Oct 1988), FAR
-12.212 (a) (1995), FAR 52.227-19 (June 1987), or FAR 52.227-14(ALT
-III) (June 1987), as applicable.
+	"Copyright Holder" is whoever is named in the copyright or
+	copyrights for the package.
 
-6.  Governing Law.  Any action related to this Agreement will be
-governed by Colorado law and controlling U.S. federal law.  No
-choice of law rules of any jurisdiction will apply.
+	"You" is you, if you're thinking about copying or distributing
+	this Package.
 
-7.  Severability. If any provision of this Agreement is held to be
-unenforceable, This Agreement will remain in effect with the provision
-omitted, unless omission would frustrate the intent of the parties, in
-which case this Agreement will immediately terminate.
+	"Reasonable copying fee" is whatever you can justify on the
+	basis of media cost, duplication charges, time of people involved,
+	and so on.  (You will not be required to justify it to the
+	Copyright Holder, but only to the computing community at large
+	as a market that must bear the fee.)
 
-8.  Integration.  This Agreement is the entire agreement between you
-and fpsn.net relating to its subject matter.  It supersedes all prior or
-contemporaneous oral or written communications, proposals,
-representations and warranties and prevails over any conflicting or
-additional terms of any quote, order, acknowledgment, or other
-communication between the parties relating to its subject matter
-during the term of this Agreement.  No modification of this Agreement
-will be binding, unless in writing and signed by an authorized
-representative of each party.
+	"Freely Available" means that no fee is charged for the item
+	itself, though there may be fees involved in handling the item.
+	It also means that recipients of the item may redistribute it
+	under the same conditions they received it.
 
-9.  Redistrobution.  You may copy and distribute verbatim copies of the 
-"Software" with complete source code as you receive it, in any medium, 
-provided that you conspicuously and appropriately publish on each copy 
-an appropriate copyright notice and disclaimer of warranty; keep intact
-all the notices that refer to this License and to the absence of any
-warranty; and distribute a copy of this License along with the "Software".
-You may NOT charge a fee for the physical act of transferring a copy, 
-and you may NOT at any time offer warranty protection in exchange for a fee.
+1. You may make and give away verbatim copies of the source form of the
+Standard Version of this Package without restriction, provided that you
+duplicate all of the original copyright notices and associated disclaimers.
 
-10.  Modification.  You may modify your copy or copies of the "Software",
-thus forming a work based on the "Software", and copy and distribute such
-modifications or work under the terms of Section 9 above.
+2. You may apply bug fixes, portability fixes and other modifications
+derived from the Public Domain or from the Copyright Holder.  A Package
+modified in such a way shall still be considered the Standard Version.
 
-11.  Utilization.  A program that contains no derivative of any portion of
-the "Software", but is designed to work with the "Software" by being compiled
-or linked with it, is called a "work that uses the Software". Such a work,
-in isolation, is not a derivative work of the "Software", and therefore falls
-outside the scope of this License.  However, linking a "work that uses the Software"
-with the "Software" that creates an executable that is a derivative of the
-"Software"  (because it contains portions of the Original "Software"), rather 
-than a "work that uses the Software". The executable is therefore covered by 
-this License. Section 9 states terms for distribution of such executables. 
+3. You may otherwise modify your copy of this Package in any way, provided
+that you insert a prominent notice in each changed file stating how and
+when you changed that file, and provided that you do at least ONE of the
+following:
 
+    a) place your modifications in the Public Domain or otherwise make them
+    Freely Available, such as by posting said modifications to Usenet or
+    an equivalent medium, or placing the modifications on a major archive
+    site such as uunet.uu.net, or by allowing the Copyright Holder to include
+    your modifications in the Standard Version of the Package.
 
-Should you request this license via Mail, you
-may write to:
+    b) use the modified Package only within your corporation or organization.
 
-     License request
-     910 Grape Ave.
-     Boulder, Colorado 80304
+    c) rename any non-standard executables so the names do not conflict
+    with standard executables, which must also be provided, and provide
+    a separate manual page for each non-standard executable that clearly
+    documents how it differs from the Standard Version.
 
+    d) make other distribution arrangements with the Copyright Holder.
 
-Please be sure to include your name mailing address
-and a self addressed stamped envelope, and the license(s)
-you wish to receive.
-Please allow for 3 to 5 weeks for mailing.
+4. You may distribute the programs of this Package in object code or
+executable form, provided that you do at least ONE of the following:
 
-For inquiries please contact us online at: 
-        http://www.fpsn.net/
+    a) distribute a Standard Version of the executables and library files,
+    together with instructions (in the manual page or equivalent) on where
+    to get the Standard Version.
+
+    b) accompany the distribution with the machine-readable source of
+    the Package with your modifications.
+
+    c) give non-standard executables non-standard names, and clearly
+    document the differences in manual pages (or equivalent), together
+    with instructions on where to get the Standard Version.
+
+    d) make other distribution arrangements with the Copyright Holder.
+
+5. You may charge a reasonable copying fee for any distribution of this
+Package.  You may charge any fee you choose for support of this
+Package.  You may not charge a fee for this Package itself.  However,
+you may distribute this Package in aggregate with other (possibly
+commercial) programs as part of a larger (possibly commercial) software
+distribution provided that you do not advertise this Package as a
+product of your own.  You may embed this Package's interpreter within
+an executable of yours (by linking); this shall be construed as a mere
+form of aggregation, provided that the complete Standard Version of the
+interpreter is so embedded.
+
+6. The scripts and library files supplied as input to or produced as
+output from the programs of this Package do not automatically fall
+under the copyright of this Package, but belong to whoever generated
+them, and may be sold commercially, and may be aggregated with this
+Package.  If such scripts or library files are aggregated with this
+Package via the so-called "undump" or "unexec" methods of producing a
+binary executable image, then distribution of such an image shall
+neither be construed as a distribution of this Package nor shall it
+fall under the restrictions of Paragraphs 3 and 4, provided that you do
+not represent such an executable image as a Standard Version of this
+Package.
+
+7. C subroutines (or comparably compiled subroutines in other
+languages) supplied by you and linked into this Package in order to
+emulate subroutines and variables of the language defined by this
+Package shall not be considered part of this Package, but are the
+equivalent of input as in Paragraph 6, provided these subroutines do
+not change the language in any way that would cause it to fail the
+regression tests for the language.
+
+8. Aggregation of this Package with a commercial distribution is always
+permitted provided that the use of this Package is embedded; that is,
+when no overt attempt is made to make this Package's interfaces visible
+to the end user of the commercial distribution.  Such use shall not be
+construed as a distribution of this Package.
+
+9. The name of the Copyright Holder may not be used to endorse or promote
+products derived from this software without specific prior written permission.
+
+10. THIS PACKAGE IS PROVIDED "AS IS" AND WITHOUT ANY EXPRESS OR
+IMPLIED WARRANTIES, INCLUDING, WITHOUT LIMITATION, THE IMPLIED
+WARRANTIES OF MERCHANTIBILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+
+				The End
+

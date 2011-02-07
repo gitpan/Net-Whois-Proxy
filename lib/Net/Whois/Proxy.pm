@@ -4,7 +4,7 @@ use strict;
 use IO::Socket;
 use vars qw ($VERSION);
 
-$VERSION = $1 if('$Id: Proxy.pm,v 1.10 2006/06/26 17:19:18 cfaber Exp $' =~ /,v ([\d.]+) /);
+$VERSION = $1 if('$Id: Proxy.pm,v 1.12 2011/02/07 16:02:52 cfaber Exp $' =~ /,v ([\d.]+) /);
 
 =head1 NAME
 
@@ -153,7 +153,7 @@ sub new {
 	clean_stack		=> $opts{clean_stack},
 	master_ip_whois		=> $opts{master_ip_whois} || 'whois.arin.net',
 	master_ip_port		=> $opts{master_ip_port} || 43,
-	master_whois		=> $opts{master_whois} || 'rs.internic.net',
+	master_whois		=> $opts{master_whois} || 'whois.internic.net',
 	master_port		=> $opts{master_port} || 43,
 	query_timeout		=> $opts{query_timeout} || 10
  }, $class;
@@ -621,17 +621,19 @@ sub _query_whois {
 
  $self->_pd("Attempting to connect to: $serv:$port (to: $timeout)", caller);
 
+ $SIG{ALRM} = sub { die 'timeout'; };
  eval {
-	$SIG{ALRM} = sub { die 'timeout'; };
 	alarm(($timeout || $self->{master_timeout}) + 5);
 	$sock = IO::Socket::INET->new(
 		Proto		=> 'tcp',
 		PeerAddr	=> $serv || $self->{master_whois},
 		PeerPort	=> $port || $self->{master_port},
-		Timeout	=> $timeout || $self->{master_timeout}
+		Timeout		=> $timeout || $self->{master_timeout}
 	) || die "Unable to create socket $!";
-	alarm(0);
  };
+
+ alarm(0);
+
  if($@ =~ /timeout/){
 	$self->_pd("Timed out!", caller);
 	return $self->_seterrstr("Connection to " . ($serv || $self->{master_whois}) . ':' . ($port || $self->{master_port}) . " was refused.");
